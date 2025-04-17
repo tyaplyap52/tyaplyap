@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маникюрчик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, pink);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+        .button-container1 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .toggle-button1 {
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .dynamic-buttons {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .dynamic-button {
+            margin: 5px 0;
+            background-color: #d87093; 
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(216, 112, 147, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .dynamic-button:hover {
+            background-color: #ff1493; 
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.7); 
+            transform: scale(1.05); 
+        }
+        .hidden {
+            display: none; 
+        }
+        footer { 
+            text-align:center ; 
+            margin-top:auto ; 
+            padding-top :20 px ; 
+        }
+        body {
+                font-family: 'Arial', sans-serif;
+                background-color: #ffe6f2; 
+                margin: 0;
+                padding: 0;
+        }
+
+        .section {
+                max-width: 600px;
+                margin: 40px auto;
+                background-color: #fff; 
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+        }
+
+        h2 {
+                color: #ff69b4; 
+                text-align: center;
+        }
+
+        p {
+                color: #333; 
+                line-height: 1.6;
+        }
+
+        .contact-info {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+        }
+
+        .contact-info img {
+                margin-right: 10px; 
+        }
+
+        .social-icons {
+                display:flex ;
+                justify-content:center ;
+                margin-top :20 px ;
+        }
+
+        .social-icons a {
+                margin :0 px ; /* Отступ между иконками */
+        }
+
+        .social-icons img {
+                transition :transform   (0.2s); /* Плавный эффект при наведении */
+        }
+
+        .social-icons img:hover {
+                transform :scale(1.2); /* Увеличение иконки при наведении */
+         }
+         h1{
+             text-align:center ;
+             color:#ff69b4 ;
+         }
+         h4 {
+             text-align:center ;
+             color:#ff69b4 ;
+         }
+         .logo {
+            position: absolute;
+            top: 10px; /* Отступ сверху */
+            left: 10px; /* Отступ слева */
+            width: 80px; /* Изменена ширина логотипа на 80px */
+            height: auto; 
+           }
+           .gif-container {
+            display: flex; /* Используем флексбокс для выстраивания элементов в ряд */
+            gap: 10px; /* Отступ между GIF */
+        }
+
+        .gif-container img {
+            max-width: 100%; /* Максимальная ширина для изображений */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            width: 100px; /* Фиксированная ширина для каждого GIF */
+            /* Можно изменить 100px на нужное значение */
+        }
+
+        
+
+        body {
+            display: flex;
+            flex-direction: column; /* Столбцовое расположение элементов */
+            align-items: center; /* Центрируем содержимое по горизонтали */
+            height: 100vh; /* Высота на весь экран */
+            justify-content: center; /* Центрируем содержимое по вертикали */
+            background-color: #f0f0f0; /* Фоновый цвет для контраста */
+        }
+
+        .container {
+            display: flex; /* Используем flexbox для расположения элементов в ряд */
+            justify-content: space-between; /* Разделяем элементы по краям */
+            width: 100%; /* Ширина на весь экран */
+            max-width: 600px; /* Ограничиваем максимальную ширину контейнера */
+            margin-bottom: 20px; /* Отступ снизу для футера */
+            gap: 400px;
+        }
+
+        .cat,
+        .psina {
+            /* Контейнеры для изображений 1 и 3 */
+            text-align: right; /* Выравнивание текста вправо */
+            flex: 1; /* Элементы занимают равное пространство */
+        }
+
+        .cat img,
+        .psina img {
+            max-width: 100%; /* Максимальная ширина изображения */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+        }
+
+        .center {
+            text-align: center; /* Центрируем содержимое */
+        }
+
+        .center img {
+            max-width: 100%; /* Максимальная ширина изображения */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo"><img src="Group 3.png" alt="Tyap Lyap"></div>
+
+<div class="button-container1">
+    <button class="toggle-button1" id="toggle-button">☰</button>
+    <div class="dynamic-buttons hidden">
+      <a href="netrog.html" class="dynamic-button">Главная</a>
+      <a href="услуги.html" class="dynamic-button">Услуги</a>
+      <a href="О нас.html" class="dynamic-button">О нас</a>
+    </div>
+</div>
+
+<h1>О нас</h1>
+<h4>Связаться с нами вы можете по реквизитам снизу</h4>
+
+<div id="about" class="section">
+    <h2>Наши реквизиты </h2>
+    <p>Мы - команда профессионалов, готовых помочь вам!</p>
+    <p>Мы ждем вас по адресу:</p>
+    <p>г. Москва, ул. Примерная, д. 1</p>
+    <p>Время работы салона:<br> С 10.00 до 21.00</p>
+    <div class="contact-info">
+       <img src="https://img.icons8.com/material-outlined/24/000000/phone.png" alt="Телефон">
+       <span>Телефон:+7 (953)529-24-99</span>
+   </div>
+   <div class="social-icons">
+       <a href="https://vk.com" target="_blank">
+           <img src="https://img.icons8.com/material-outlined/24/000000/vk-circled.png" alt="ВКонтакте">
+       </a>
+       <a href="https://t.me/ozonovsky_chervb" target="_blank">
+           <img src="https://img.icons8.com/material-outlined/24/000000/telegram-app.png" alt="Телеграм">
+       </a>
+   </div>
+</div>
+
+<div class="container">
+    <div class="cat">
+        <img src="https://media.tenor.com/ZPHHiCRxrlsAAAAj/happy-happy-happy-cat.gif" alt="Описание GIF">
+    </div>
+    <div class="psina">
+        <img src="https://media.tenor.com/ZPHHiCRxrlsAAAAj/happy-happy-happy-cat.gif" alt="Описание GIF">
+    </div>
+</div>
+
+<div class="center">
+    <img src="https://media.tenor.com/ZPHHiCRxrlsAAAAj/happy-happy-happy-cat.gif" alt="Описание GIF">
+</div>
+
+
+
+<footer>
+    © Ваш сайт о маникюре. Все права защищены.
+</footer>
+
+<script>
+    document.getElementById('toggle-button').addEventListener('click', function() {
+      const dynamicButtons = document.querySelector('.dynamic-buttons');
+      
+      if (dynamicButtons.classList.contains('hidden')) {
+          dynamicButtons.classList.remove('hidden');
+      } else {
+          dynamicButtons.classList.add('hidden');
+      }
+});
+</script>
+
+</body>
+</html>
