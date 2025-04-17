@@ -1,0 +1,143 @@
+/* проба.css */
+body {
+   font-family: Arial, sans-serif;
+   background: linear-gradient(to bottom right, #e0f7fa, pink); /* Градиент от светло-голубого к светло-зеленому */
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh; /* Минимальная высота на весь экран */
+   position: relative; /* Добавлено для правильного позиционирования дочерних элементов */
+}
+
+header {
+   display: flex;
+   align-items: center;
+   padding: 10px 20px; /* Отступы для заголовка */
+}
+
+.tabs {
+   position: absolute; /* Позиционирование по отношению к родителю */
+   top: 10px; /* Отступ сверху */
+   right: 10px; /* Отступ справа */
+   display: flex; /* Для горизонтального выравнивания */
+   align-items: center; /* Выравнивание по вертикали */
+}
+
+.toggle-button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; /* Отступ от кнопки "троеточие" */
+  padding: 15px; /* Увеличиваем хитбокс для кнопки "троеточие" */
+  border: 2px solid rgba(255, 255, 255, 0.8); /* Белая рамка с прозрачностью */
+  border-radius: 10px; /* Закругленные углы рамки */
+  background-color: pink; /* Полупрозрачный зеленый фон для кнопки */
+}
+
+.dot {
+  width: 8px; /* Размер точек */
+  height: 8px;
+  background-color: white; /* Белый цвет точек */
+  border-radius: 50%;
+  margin: 2px 0;
+}
+
+/* Стили для кнопки "крестик" */
+.close-button {
+    cursor: pointer;
+    font-size: 20px;
+    color: white; /* Цвет текста крестика */
+    background-color: pink; /* Красный фон для кнопки крестика */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px; /* Отступы для удобства нажатия */
+    border: none; /* Убираем рамку */
+}
+
+/* Стили для кнопок вкладок */
+.tab-links {
+    display: flex; /* Изменяем на flex для размещения вкладок в ряд */
+    margin-left: 20px; /* Отступ от кнопок "троеточие" и "крестик" */
+}
+
+.tab-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgba(255, 105, 180, 1); /* Зеленый цвет текста ссылок */
+    padding: 10px 15px; /* Отступы для кнопок */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.tab-link:hover {
+    background-color: rgba(255, 105, 180, 1); /* Цвет фона при наведении (более темный) */
+    color:white; /* Цвет текста при наведении */ 
+}
+
+.tab-link.active {
+    font-weight:bold;/* Подсвечиваем активную вкладку */ 
+    background-color : #FF69B4;/* Более темный фон активной вкладки */ 
+    color:white ;/* Цвет текста активной вкладки */ 
+}
+
+.tab-content {
+    display:none ;/* Скрываем контент вкладок по умолчанию */ 
+    text-align:center ;/* Центрируем текст в контенте вкладок */ 
+}
+
+/* Показываем активный контент */ 
+.tab-content.active { 
+    display:block ; 
+    color: #FF69B4;
+}
+
+/* Убираем рамку для контента вкладок и добавляем отступы */ 
+.tab-content h2 , 
+.tab-content p { 
+    margin-bottom :15 px ; 
+}
+
+/* Стили для футера */ 
+footer { 
+    text-align:center ; 
+    margin-top:auto ; 
+    padding-top :20 px ; 
+}
+
+/* Стили для карусели */
+.carousel {
+   position: relative;
+   width: calc(100% - 40px); /* Ширина карусели с учетом отступов по бокам*/
+   max-width:600px; /* Максимальная ширина */
+   margin:auto; /* Центрируем карусель по горизонтали*/
+   overflow:hidden; /* Скрываем лишнее содержимое */
+}
+
+.carousel-images {
+   display:flex; /* Размещаем изображения в ряд */
+   transition-behavior:.5s ease-in-out;/* Плавный переход при смене изображений*/
+}
+
+.carousel img {
+   width :100%;/* Изображения занимают всю ширину карусели*/
+   display:none ;/* Скрываем все изображения по умолчанию*/
+}
+
+.carousel img.active {
+   display:block ;/* Показываем только активное изображение*/
+}
+
+.carousel-button {
+   position:absolute ;
+   top :50% ;
+   transform :translateY(-50%) ;
+   background-color :rgba(255 ,255 ,255 ,0.7) ;/* Полупрозрачный фон для кнопок*/
+   border:none ;
+   padding :10 px ;
+   cursor:pointer ;
+}
+
+.prev {
+   left :10 px ;/* Положение кнопки "Назад"*/
+}
+
+.next {
+   right :10 px ;/* Положение кнопки "Вперед"*/
+}
